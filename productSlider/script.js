@@ -25,6 +25,7 @@ fetch("https://dummyjson.com/users")
             </div>
         </div>
         `)
+
     })
     // let hideFirstElement = carousel.firstElementChild
     // let img = carousel.firstElementChild.firstElementChild
@@ -36,8 +37,24 @@ fetch("https://dummyjson.com/users")
 
 
 const carousel = document.querySelector(".carousel");
+const arrowBtns = document.querySelectorAll(".wrapper span");
+const card = document.querySelector(".card")
+console.log(card, "hello")
+const firstCardWidth = document.querySelector(".card").offsetWidth;
+
 
 let isDragging = false, startX, startScrollLeft;
+
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+
+arrowBtns.forEach(btn =>{
+// const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+
+    btn.addEventListener("click", ()=>{
+        console.log(btn.id);
+        // carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+    })
+} )
 const dragStart = (e)=>{
     isDragging = true;
     carousel.classList.add("dragging");
